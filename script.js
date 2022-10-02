@@ -70,8 +70,14 @@ function hexFindbtn() {
 // Random Color Picker
 
 function randompickerbtn() {
-  let newColor = "#" + Math.random().toString(16).substring(2, 8);
+  let newColor = Math.floor(Math.random() * 16777215).toString(16);
   let bg = document.getElementById("randomValuePara");
+  if (newColor.length == 5) {
+    newColor = "#" + "0" + newColor;
+  } else {
+    newColor = "#" + newColor;
+  }
+
   bg.textContent = newColor;
   document.getElementById("randomPicker").style.backgroundColor = newColor;
 }
