@@ -15,6 +15,10 @@ This is a multipurpose colors website developed using html, tailwindcss and java
 
 ## Video
 
+https://user-images.githubusercontent.com/109405477/193450842-7f519449-3897-46a3-ba07-3ae480b8a761.mp4
+
+
+
 **Check it out at : https://colorsgeneratornow.netlify.app/**
 
 ## 🚀 About Me
