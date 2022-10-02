@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="h-screen bg-[#060917] text-[#E0E4F8] font-[Montserrat] max-w-[90%] mx-auto"
+  >
+    <div class="top flex flex-col justify-center items-center mt-8">
+      <img src="./assets/logo.png" class="h-28" alt="" />
+      <h1 class="text-7xl font-semibold my-7">COLORS</h1>
+      <h4 class="text-4xl font-medium text-[#ffe75e]">Features</h4>
+    </div>
+
+    <div
+      class="top-boxes flex flex-wrap justify-center items-center gap-10 text-[#E0E4F8] mt-20"
+    >
+      <div
+        class="box box-1 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#hexTrgbGO">
+          <div class="text-center">
+            <h3>HEX to RGB Converter</h3>
+            <p>Converts Code from<br />HEX value to RGB value</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="box box-2 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#rgbThexGO">
+          <div class="text-center">
+            <h3>RGB to HEX Converter</h3>
+            <p>Converts Code from<br />RGB value to HEX value</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="box box-3 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#selectByRangeGO">
+          <div class="text-center">
+            <h3>Select by RGB Range</h3>
+            <p>Choose by changing<br />the Range of RGB</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="box box-4 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#colorByHexGO">
+          <div class="text-center">
+            <h3>Color by HEX Code</h3>
+            <p>See the color by<br />knowing the HEX code</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="box box-5 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#colorByRgbGO">
+          <div class="text-center">
+            <h3>Color by RGB Code</h3>
+            <p>Display the color<br />by RGB value</p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="box box-6 w-[300px] h-[150px] flex items-center justify-center text-xl font-semibold rounded-md border-2 border-solid border-[#435FFF] hover:scale-110 transition-all duration-200 ease-in-out"
+      >
+        <a href="#randomPickerGO">
+          <div class="text-center">
+            <h3>Random Color Picker</h3>
+            <p>Choose randomly by<br />tapping the button</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div id="hexTrgbGO" class="mt-40">
+      <h1 class="text-center text-5xl font-semibold mb-20">HEX To RGB</h1>
+      <div class="content-1 flex justify-between flex-col gap-10 lg:flex-row lg:items-start">
+        <div class="left-1 flex flex-col lg:flex-row justify-center items-center gap-7">
+            <div class="inp-1"> 
+                <input
+                type="text"
+                id="hexCInp"
+                placeholder="Enter 6 digit Hex Code with #"
+                class="w-80 text-xl text-center text-black h-[50px] rounded-full bg-[#d7ddff]"
+              /></div>
+         
+           <div class="btn-1">
+            <a
+            class="btn btn-primary btn-light hex-conv-button cursor-pointer text-xl border-2 border-solid border-[#435FFF] font-semibold px-4 py-2 rounded-full hover:text-2xl select-none transition-all ease-in-out duration-100"
+            onclick="hexConvbtn()"
+            id="HexConvertButton"
+            >Convert</a
+          ></div>
+          
+        </div>
+        <div class="right-1 flex flex-col">
+            
+          <div class="hexConv-out-box">
+            <h1
+              id="hexCOut"
+              class="border-2 border-solid border-[#435FFF] w-[82%] lg:w-[25vw]  mx-auto h-[50px] rounded-full flex justify-center items-center text-2xl"
+            ></h1>
+          </div>
+          <button id="copy" class="mt-10 cursor-pointer text-xl border-2 border-solid border-[#435FFF] font-semibold px-4 py-2 rounded-3xl max-w-max mx-auto hover:scale-110 transition-all select-none ease-in-out duration-100" onclick="copyItOne()">Copy Color Code</button>
+            <p id="copied-1" class="mt-2 hidden text-center">Copied ✔</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="rgbThexGO" class="mt-40">
+      <h1 class="text-center text-5xl font-semibold mb-20">RGB To HEX</h1>
+      <div class="content-1 flex flex-col justify-between  gap-10 lg:flex-row lg:items-start  ">
+        <div class="left-1 flex flex-col justify-center items-center gap-7 lg:flex-row">
+            <div class="inp-2 flex gap-2">
+                <input
+                type="number"
+                max="255"
+                min="0"
+                id="RCInput"
+                class="h-[50px] text-center rounded-full bg-[#d7ddff] text-xl text-black"
+                placeholder="R"
+              />
+              <input
+                type="number"
+                max="255"
+                min="0"
+                id="GCInput"
+                class="h-[50px] text-center rounded-full bg-[#d7ddff] text-xl text-black"
+                placeholder="G"
+              />
+              <input
+                type="number"
+                max="255"
+                min="0"
+                id="BCInput"
+                class="h-[50px] text-center rounded-full bg-[#d7ddff] text-xl text-black"
+                placeholder="B"
+              />
+            </div>
+            <div class="btn-2">
+                <a
+                class="btn select-none btn-primary btn-light hex-conv-button cursor-pointer text-xl border-2 border-solid border-[#435FFF] font-semibold px-4 py-2 rounded-full hover:text-2xl transition-all ease-in-out duration-100"
+                onclick="rgbConvbtn()"
+                id="rgbConvertButton"
+                >Convert</a
+              >
+            </div>
+   
+
+       
+        </div>
+        <div class="right-1 flex flex-col">
+          
+          <div class="rgbConv-out-box">
+            <h1
+              id="rgbCOut"
+              class="border-2 border-solid border-[#435FFF] rounded-full w-[82%] lg:w-[25vw] text-2xl flex items-center justify-center mx-auto h-[50px]"
+            ></h1>
+          </div>
+          <button id="copy" class="mt-10 cursor-pointer text-xl  font-semibold px-4 py-2 rounded-3xl border-2 border-solid border-[#435FFF]  max-w-max select-none mx-auto hover:scale-110 transition-all ease-in-out duration-100" onclick="copyItTwo()">Copy Color Code</button>
+          <p id="copied-2" class="mt-2 hidden text-center">Copied ✔</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <div id="selectByRangeGO" class="mt-40">
+      <h1 class="text-center text-5xl font-semibold mb-20">
+        Select by RGB Range
+      </h1>
+      <div class="content-1 ">
+        <div class="right-1 mt-10 flex flex-col">
+          <div
+            id="range-color-box"
+            class="border-2 border-solid border-[#435FFF] w-[82%] mx-auto h-[100px] rounded-full"
+          ></div>
+          <p id="rangeCopy" class="hidden"></p>
+          
+        </div>
+        <div class="left-1 flex flex-col lg:flex-row lg:gap-5 items-center my-10 justify-center">
+          <label for="RValue">R</label>
+          <input
+            type="range"
+            class="lg:p-5"
+            max="255"
+            min="0"
+            id="RrInput"
+            value="0"
+            oninput="RangeSelector()"
+          />
+          <label for="GValue">G</label>
+          <input
+            type="range"
+            class="lg:p-5"
+            max="255"
+            min="0"
+            id="GrInput"
+            value="0"
+            oninput="RangeSelector()"
+          />
+          <label for="BValue">B</label>
+          <input
+            type="range"
+            class="lg:p-5"
+            max="255"
+            min="0"
+            id="BrInput"
+            value="0"
+            oninput="RangeSelector()"
+          />
+
+          
+        </div>
+        <button id="copy" class="cursor-pointer text-xl flex justify-center items-center  font-semibold px-4 py-2 rounded-3xl border-2 border-solid border-[#435FFF]  max-w-max mx-auto select-none hover:scale-110 transition-all ease-in-out duration-100" onclick="copyItLast()">Copy Color Code</button>
+      <p id="copied-3" class="mt-2 hidden text-center">Copied ✔</p>
+       
+      </div>
+    </div>
+
+    <div id="colorByHexGO" class="mt-40">
+      <h1 class="text-center text-5xl font-semibold mb-20">
+        Color by HEX Code
+      </h1>
+      <div class="content-1">
+        <div class="right-1 mt-10">
+          <div
+            id="color-box"
+            class="border-2 border-solid border-[#435FFF] rounded-full bg-[] w-[82%] mx-auto h-[100px]"
+          ></div>
+          
+        </div>
+        <div class="left-1 flex flex-col items-center mt-10 justify-center gap-7">
+            <div class="inp-range">
+                <input
+                type="text"
+                id="hexInput"
+                placeholder="Enter the Hex Code with #"
+                value=""
+                class="w-80 text-center rounded-full bg-[#d7ddff] text-xl text-black h-[50px]"
+              />
+            </div>
+            <div class="btn-range">
+                <a
+                class="btn btn-primary btn-light hex-conv-button cursor-pointer text-xl border-2 border-solid border-[#435FFF] font-semibold px-4 py-2 rounded-full lg:mt-10 select-none hover:text-2xl transition-all ease-in-out duration-100"
+                onclick="hexFindbtn()"
+                id="HexFindButton"
+                >Show</a
+              >
+            </div>
+       
+        
+        </div>
+       
+      </div>
+    </div>
+
+    <div id="colorByRgbGO" class="mt-40">
+      <h1 class="text-center text-5xl font-semibold mb-20">
+        Color by RGB Code
+      </h1>
+      <div class="content-5">
+        <div class="left-5 mt-10">
+          <div
+            id="rgb-color-box"
+            class="border-2 border-solid border-[#435FFF]  w-[82%] mx-auto h-[100px] rounded-full"
+          ></div>
+        </div>
+        <div class="right-5 mt-10 flex flex-col items-center justify-center gap-7">
+         <div class="inp-5">
+            <input
+            class="h-[50px] text-xl text-black text-center rounded-full bg-[#d7ddff]"
+            type="number"
+            max="255"
+            min="0"
+            id="RInput"
+            placeholder="R"
+          />
+          <input
+            class="h-[50px] text-xl text-black text-center rounded-full bg-[#d7ddff]"
+            type="number"
+            max="255"
+            min="0"
+            id="GInput"
+            placeholder="G"
+          />
+          <input
+            class="h-[50px] text-xl text-black text-center rounded-full bg-[#d7ddff]"
+            type="number"
+            max="255"
+            min="0"
+            id="BInput"
+            placeholder="B"
+          />
+         </div>
+
+         <div class="btn-5">
+            <a
+            class="btn btn-primary btn-light hex-conv-button cursor-pointer  text-xl border-2 border-solid border-[#435FFF] font-semibold px-4 py-2 select-none rounded-full hover:text-2xl transition-all ease-in-out duration-100"
+            onclick="RGBFindbtn()"
+            id="RGBFindButton"
+            >Show</a
+          >
+         </div>
+
+
+         
+        </div>
+       
+      </div>
+    </div>
+
+
+    <div id="randomPickerGO"  class="mt-40 pb-20">
+        <div class=" container random-container">
+
+          <div class="text text-center">
+            <h2 class="text-center text-5xl font-semibold mb-20">Random Color Picker</h2>
+            
+           
+            <div class="random-picker mt-10 rounded-full bg-[#58e9b2]" id="randomPicker">
+              <p class="random-value-para h-[120px] flex items-center justify-center  text-5xl text-[#0a0928]  font-semibold" id="randomValuePara">#58e9b2</p>
+            </div>
+            <div class="last-btns mt-10">
+              <a class="btn btn-primary  btn-light hex-conv-button cursor-pointer text-xl font-semibold px-4 border-2 border-solid border-[#435FFF] py-2 rounded-3xl random-picker-button select-none hover:text-2xl transition-all ease-in-out duration-100" onclick="randompickerbtn()"
+              id="randomPickerButton">Generate Color</a>
+             
+          </div>
+            <button id="copy" class="mt-10 cursor-pointer text-xl  font-semibold border-2 border-solid border-[#435FFF] px-4 py-2 rounded-3xl hover:scale-110 transition-all ease-in-out duration-100" onclick="copyIt()">Copy Color Code</button>
+            <p id="copied" class="mt-2 hidden">Copied ✔</p>
+
+          </div>
+        </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
